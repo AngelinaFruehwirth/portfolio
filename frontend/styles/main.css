@@ -7,6 +7,17 @@
     --color-white: #ffffff;
     --color-black: #000000;
     --color-accent: #ff0000;
+
+ /* Portfolio colors */
+    --color-vino: #381932;
+    --color-creme: #FFF3E6;
+    --color-sky: #B5C5D4;
+    --color-grey: #A09F9F;
+
+     /* Portfolio fonts */
+    --font-primary: "Futura PT", sans-serif;
+    --font-display: "Special Gothic Expanded One", sans-serif;
+
     /* gaps & sizes */
     --gap-around: 40px;
     /* fonts */
@@ -16,14 +27,51 @@
 /* Styling of all available layout components. */
 [data-layout="header"] {
     padding: var(--gap-around);
-    background-color: var(--color-accent);
+    background-color: var(--color-grey);
     position: sticky;
     top: 0;
     z-index: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .nav-container {
+    .nav {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-self: center;
+        gap: 50px;
+        a {
+    text-decoration: none;
+    color: var(--color-vino);
+    font-family: var(--font-display);
+}
+    }
+}
+
+
+
 }
 [data-layout="footer"] {
     padding: var(--gap-around);
-    background-color: var(--color-accent);
+    background-color: var(--color-grey);
+     .nav-container {
+    .nav {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-self: center;
+        gap: 50px;
+        a {
+    text-decoration: none;
+    color: var(--color-vino);
+    font-family: var(--font-display);
+}
+    }
+}
 }
 
 /* Styling of all available page components. */

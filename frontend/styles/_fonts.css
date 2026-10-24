@@ -1,9 +1,20 @@
-/*--- My Font ---*/
-/*regular*/
-/*@font-face {
-    font-family: 'Name';
+/* --- Futura PT --- */
+
+@font-face {
+    font-family: 'Futura PT';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../assets/fonts/filename.woff2') format('woff2');
-}*/
+    src: url('../assets/fonts/futura-pt.woff2') format('woff2');
+}
+
+
+/* --- Special Gothic Expanded One --- */
+
+@font-face {
+    font-family: 'Special Gothic Expanded One';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../assets/fonts/SpecialGothicExpandedOne-Regular.ttf') format('truetype');
+}
