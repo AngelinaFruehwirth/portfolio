@@ -72,21 +72,42 @@
 [data-layout="footer"] {
     padding: var(--gap-around);
     background-color: var(--color-vino);
-     .nav-container {
-    .nav {
-        list-style: none;
+
+    .nav-container {
+        .nav {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-self: center;
+            gap: 50px;
+
+            a {
+                text-decoration: none;
+                color: var(--color-creme);
+                font-family: var(--font-display);
+            }
+        }
+    }
+
+    .socials {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-self: center;
-        gap: 50px;
+        gap: 20px;
+
         a {
-    text-decoration: none;
-    color: var(--color-creme);
-    font-family: var(--font-display);
-}
+            text-decoration: none;
+        }
+
+        img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            display: block;
+        }
     }
-}
 }
 
 /* Styling of all available page components. */
