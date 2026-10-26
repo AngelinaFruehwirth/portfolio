@@ -19,15 +19,22 @@
     --font-display: "Special Gothic Expanded One", sans-serif;
 
     /* gaps & sizes */
-    --gap-around: 40px;
+    --gap-around: 20px;
     /* fonts */
     --font-h1: normal 64px/120% serif;
+
+}
+
+ [data-layout="header"] > .logo {
+    width: 80px;
+    height: auto;
+    flex-shrink: 0;
 }
 
 /* Styling of all available layout components. */
 [data-layout="header"] {
     padding: var(--gap-around);
-    background-color: var(--color-grey);
+    background-color: var(--color-vino);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -45,7 +52,7 @@
         gap: 50px;
         a {
     text-decoration: none;
-    color: var(--color-vino);
+    color: var(--color-creme);
     font-family: var(--font-display);
 }
     }
@@ -56,7 +63,7 @@
 }
 [data-layout="footer"] {
     padding: var(--gap-around);
-    background-color: var(--color-grey);
+    background-color: var(--color-vino);
      .nav-container {
     .nav {
         list-style: none;
@@ -67,7 +74,7 @@
         gap: 50px;
         a {
     text-decoration: none;
-    color: var(--color-vino);
+    color: var(--color-creme);
     font-family: var(--font-display);
 }
     }
