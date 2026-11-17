@@ -8,6 +8,6 @@ Container::make('post_meta', 'Projekt')
         field :: make('image', 'image', 'Bild')->set_required(),
         field :: make('textarea', 'description', 'Beschreibung')->set_required()->set_help_text('wird für Teaser benötigt'),
         field :: make('textarea', 'lead', 'Lead')->set_required(),
-        field :: make('rich_text', 'text', 'Text')->set_required(),
+        field :: make('rich_text', 'text', 'Text')->set_required()
 
     ]);

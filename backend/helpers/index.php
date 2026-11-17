@@ -14,6 +14,7 @@ function js_log(mixed ...$content): void
     }
 }
 
+
 // -> Details einer Mediendatei anhand der ID laden
 function get_media_by_id(int|string $id, string $size = 'm'): false|array
 {
