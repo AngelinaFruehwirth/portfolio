@@ -6,12 +6,18 @@ function get_project_by_id(int $id): array {
     $lead = carbon_get_post_meta($id, 'lead');
     $description = carbon_get_post_meta($id, 'description');
     $text = carbon_get_post_meta($id, 'text');
+
+   $project_categories = array_map(callback: function($item) {
+    return $item->name;
+    }, array: get_the_terms($id, 'project_category'));
+
     return [
         'title' => $title,
         'image' => $image,
         'lead' => $lead,
         'description' => $description,
         'text' => $text,
+        'project_categories' => $project_categories,
     ];
 }
 
