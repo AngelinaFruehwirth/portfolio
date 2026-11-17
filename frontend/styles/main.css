@@ -105,9 +105,9 @@
             width: 36px;
             height: 36px;
             object-fit: contain;
-            display: block;
+            display: block;             
         }
-    }
+        }
 }
 
 /* Styling of all available page components. */

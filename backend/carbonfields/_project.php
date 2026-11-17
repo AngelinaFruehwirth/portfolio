@@ -2,8 +2,12 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-Container::make('post_meta', 'Vorlage')
-    ->where('post_type', '=', 'preset')
+Container::make('post_meta', 'Projekt')
+    ->where('post_type', '=', 'project')
     ->add_fields([
-        // Felder hier einfügen
+        field :: make('image', 'image', 'Bild')->set_required(),
+        field :: make('textarea', 'description', 'Beschreibung')->set_required()->set_help_text('wird für Teaser benötigt'),
+        field :: make('textarea', 'lead', 'Lead')->set_required(),
+        field :: make('rich_text', 'text', 'Text')->set_required(),
+
     ]);
