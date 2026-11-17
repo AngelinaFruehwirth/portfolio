@@ -13,6 +13,14 @@ Container::make('post_meta', 'Module')
                 Field::make('image', 'image', 'Bild')->set_required(),
             ])
             // todo: add new modules here
+            // hero_front
+            ->add_fields('hero_front', 'Hero Startseite', [
+            Field::make('text', 'title', 'Titel')->set_required(),
+            Field::make('textarea', 'subline', 'Subline'),
+            Field::make('image', 'image', 'Bild')->set_required(),
+            ])
+
+
             // -> SETTINGS
             ->set_layout('tabbed-vertical')
     ]);
