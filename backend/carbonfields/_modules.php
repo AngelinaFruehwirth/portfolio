@@ -35,6 +35,7 @@ function render_modules (): void {
         // -> Modifiziere die Daten des Moduls, falls nötig, basierend auf dem Modultyp
         switch ($module['_type']) {
             case 'example':
+            case 'hero_front':
                 $module['image'] = get_media_by_id($module['image'], 'full');
                 break;
                 // todo: add data modifications for modules here as a new case
