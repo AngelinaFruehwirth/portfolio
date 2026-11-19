@@ -12,14 +12,26 @@ Container::make('post_meta', 'Module')
                 Field::make('text', 'title', 'Titel')->set_required(),
                 Field::make('image', 'image', 'Bild')->set_required(),
             ])
+
             // todo: add new modules here
+
             // hero_front
             ->add_fields('hero_front', 'Hero Startseite', [
             Field::make('text', 'title', 'Titel')->set_required(),
             Field::make('textarea', 'subline', 'Subline'),
             Field::make('image', 'image', 'Bild')->set_required(),
             ])
-
+            // → overview_projects
+->add_fields('overview_projects', 'Übersicht Projekte', [
+    Field::make('text', 'title', 'Titel')->set_required(),
+    Field::make('association', 'selection', 'Auswahl Projekte')
+        ->set_types([
+            [
+                'type' => 'post',
+                'post_type' => 'project',
+            ]
+        ])
+])
 
             // -> SETTINGS
             ->set_layout('tabbed-vertical')
@@ -37,6 +49,11 @@ function render_modules (): void {
             case 'example':
             case 'hero_front':
                 $module['image'] = get_media_by_id($module['image'], 'full');
+                break;
+            case 'overview_projects':
+                $module['selection'] = array_map(function($item) {
+                 return (int) $item['id'];
+                }, $module['selection']);
                 break;
                 // todo: add data modifications for modules here as a new case
         }
