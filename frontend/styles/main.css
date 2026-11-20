@@ -1,45 +1,55 @@
 @import "_fonts.css";
 @import "_resets.css";
 
+
 /* Definition of base styles. */
 :root {
+
     /* colors */
     --color-white: #ffffff;
     --color-black: #000000;
     --color-accent: #ff0000;
 
- /* Portfolio colors */
+    /* Portfolio colors */
     --color-vino: #381932;
     --color-creme: #FFF3E6;
     --color-sky: #B5C5D4;
     --color-grey: #A09F9F;
 
-     /* Portfolio fonts */
+    /* Portfolio fonts */
     --font-primary: "Poppins", sans-serif;
     --font-display: "Special Gothic Expanded One", sans-serif;
 
     /* gaps & sizes */
     --gap-around: 20px;
+
     /* fonts */
     --font-h1: normal 64px/120% serif;
-
 }
 
+
 /* Header Logo */
+
 [data-layout="header"] > .logo {
     width: 80px;
     height: auto;
     flex-shrink: 0;
 }
 
+
 /* Footer Logo */
+
 [data-layout="footer"] > .logo {
     width: 500px;
     height: auto;
     flex-shrink: 0;
 }
 
+
 /* Styling of all available layout components. */
+
+/* Header */
+
 [data-layout="header"] {
     padding: var(--gap-around);
     background-color: var(--color-vino);
@@ -50,30 +60,35 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
     .nav-container {
-    .nav {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-self: center;
-        gap: 50px;
-        a {
-    text-decoration: none;
-    color: var(--color-creme);
-    font-family: var(--font-display);
-}
+
+        .nav {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-self: center;
+            gap: 50px;
+
+            a {
+                text-decoration: none;
+                color: var(--color-creme);
+                font-family: var(--font-display);
+            }
+        }
     }
 }
 
 
+/* Footer */
 
-}
 [data-layout="footer"] {
     padding: var(--gap-around);
     background-color: var(--color-vino);
 
     .nav-container {
+
         .nav {
             list-style: none;
             display: flex;
@@ -105,38 +120,182 @@
             width: 36px;
             height: 36px;
             object-fit: contain;
-            display: block;             
+            display: block;
         }
-        }
+    }
 }
 
+
 /* Styling of all available page components. */
+
 [data-page] {
     width: 100%;
     height: 100%;
 }
+
+
+/* Project Page */
+
 [data-page="project"] {
-background-color: var(--color-grey);
-padding: 40px 100px;
-.title {
-    font-size: 32px;
-    font-weight: bold;
+    background-color: var(--color-creme);
+    color: var(--color-vino);
+    font-family: var(--font-primary);
+    font-size: 18px;
+    line-height: 1.6;
+    height: auto;
+    padding-bottom: 140px;
 }
 
+
+/* Project Hero */
+
+[data-page="project"] > .hero {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    height: 70vh;
+    min-height: 400px;
+    overflow: hidden;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+[data-page="project"] .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+}
+
+[data-page="project"] .hero-title {
+    position: relative;
+    z-index: 1;
+    color: var(--color-creme);
+    font-family: var(--font-display);
+    font-size: clamp(36px, 8vw, 140px);
+    line-height: 1.05;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 90%;
+}
+
+
+/* Intro */
+
+[data-page="project"] > .intro {
+    width: 90%;
+    max-width: 1440px;
+    margin: 80px auto;
+}
+
+[data-page="project"] .intro .lead {
+    max-width: 650px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+
+/* Project Details */
+
+[data-page="project"] > .project-details {
+    width: 80%;
+    max-width: 1200px;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+[data-page="project"] .project-details > .image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+}
+
+[data-page="project"] .project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+[data-page="project"] .project-info .category {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+[data-page="project"] .project-info .title {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 48px);
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+[data-page="project"] .project-info .description {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* Project Credits */
+
+[data-page="project"] .project-info .credits {
+    margin-top: 24px;
+}
+
+[data-page="project"] .credits-title {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+[data-page="project"] .credits-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* Flexible Project Modules */
+
+[data-page="project"] > .project-modules {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+[data-page="project"] > .project-modules:has(> *) {
+    margin-top: 100px;
+}
+
 
 /* Styling of all available module components. */
+
 [data-module] {
     overflow: clip;
     position: relative;
     width: 100%;
 }
+
+
+/* Example Module */
+
 [data-module="example"] {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
     & > .image {
         position: absolute;
         width: 100%;
@@ -144,6 +303,7 @@ padding: 40px 100px;
         object-fit: cover;
         inset: 0;
     }
+
     & > .title {
         position: relative;
         color: white;
@@ -152,42 +312,365 @@ padding: 40px 100px;
     }
 }
 
+
+/* Hero Front Module */
+
+[data-module="hero-front"],
+[data-module="hero_front"] {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+
+    img {
+        border-radius: 0;
+    }
+}
+
+
+/* Overview Projects Module */
+
 [data-module="overview_projects"] {
+
     .projects {
         padding: 40px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 40px;
+
         img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             overflow: hidden;
-}
+        }
     }
 }
 
+
+/* Image Gallery Module */
+
+[data-module="image-gallery"] {
+
+    .gallery-track {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        border-radius: 24px;
+    }
+
+    .gallery-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gallery-slide {
+        flex: 0 0 100%;
+        aspect-ratio: 16 / 9;
+        scroll-snap-align: start;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .gallery-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .gallery-dot {
+        width: 12px;
+        height: 12px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background-color: var(--color-grey);
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    .gallery-dot.active {
+        background-color: var(--color-vino);
+    }
+
+    .gallery-dot:focus-visible {
+        outline: 2px solid var(--color-vino);
+        outline-offset: 4px;
+    }
+}
+
+
+/* Video Embed Module */
+
+[data-module="video-embed"] {
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 24px;
+        background-color: var(--color-black);
+    }
+
+    iframe {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+
+/* Text Block Module */
+
+[data-module="text-block"] {
+    color: var(--color-vino);
+    font-family: var(--font-primary);
+
+    .title {
+        font-family: var(--font-display);
+        font-size: clamp(24px, 3vw, 40px);
+        line-height: 1.2;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+    }
+
+    .text {
+        font-size: 18px;
+        line-height: 1.6;
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul,
+        ol {
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: var(--color-vino);
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+
+/* Single Image Module */
+
+[data-module="single-image"] {
+
+    figure {
+        margin: 0;
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+    }
+
+    .caption {
+        font-family: var(--font-primary);
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--color-vino);
+        margin-top: 12px;
+    }
+}
+
+
 /* Styling of all available teaser components. */
+
 
 /* Styling of utility classes, can be added anywhere in the project. */
 
+
 /* BREAKPOINT: 3xl */
-@media (max-width: 1514px) {}
+@media (max-width: 1514px) {
+
+}
+
 
 /* BREAKPOINT: xl */
-@media (max-width: 1280px) {}
+@media (max-width: 1280px) {
+
+}
+
 
 /* BREAKPOINT: lg */
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+
+}
+
 
 /* BREAKPOINT: md */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+
+    /* Project Page */
+
+    [data-page="project"] {
+        padding-bottom: 60px;
+        font-size: 16px;
+    }
+
+
+    /* Project Hero */
+
+    [data-page="project"] > .hero {
+        height: 55vh;
+        min-height: 280px;
+    }
+
+
+    /* Intro */
+
+    [data-page="project"] > .intro {
+        width: 85%;
+        margin: 40px auto;
+    }
+
+    [data-page="project"] .intro .lead {
+        font-size: 16px;
+    }
+
+
+    /* Project Details */
+
+    [data-page="project"] > .project-details {
+        width: 85%;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin: 50px auto;
+    }
+
+    [data-page="project"] .project-details > .image {
+        border-radius: 16px;
+    }
+
+    [data-page="project"] .project-info .description {
+        font-size: 16px;
+    }
+
+
+    /* Project Credits */
+
+    [data-page="project"] .project-info .credits {
+        margin-top: 16px;
+    }
+
+    [data-page="project"] .credits-title,
+    [data-page="project"] .credits-text {
+        font-size: 14px;
+    }
+
+
+    /* Flexible Project Modules */
+
+    [data-page="project"] > .project-modules {
+        width: 85%;
+        gap: 40px;
+    }
+
+    [data-page="project"] > .project-modules:has(> *) {
+        margin-top: 50px;
+    }
+
+    /* Image Gallery Module */
+
+    [data-module="image-gallery"] {
+
+        .gallery-track {
+            border-radius: 16px;
+        }
+
+        .gallery-pagination {
+            margin-top: 16px;
+            gap: 10px;
+        }
+
+        .gallery-dot {
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    /* Video Embed Module */
+
+    [data-module="video-embed"] {
+
+        .video-container {
+            border-radius: 16px;
+        }
+    }
+
+    /* Text Block Module */
+
+    [data-module="text-block"] {
+
+        .title {
+            margin-bottom: 16px;
+        }
+
+        .text {
+            font-size: 16px;
+        }
+    }
+
+
+    /* Single Image Module */
+
+    [data-module="single-image"] {
+
+        .image {
+            border-radius: 16px;
+        }
+
+        .caption {
+            font-size: 12px;
+            margin-top: 8px;
+        }
+    }
+}
+
 
 /* BREAKPOINT: sm */
-@media (max-width: 640px) {}
+@media (max-width: 640px) {
+
+}
+
 
 /* BREAKPOINT: xs */
-@media (max-width: 425px) {}
+@media (max-width: 425px) {
+
+}
+
 
 /* BREAKPOINT: xxs */
-@media (max-width: 400px) {}
+@media (max-width: 400px) {
+
+}
