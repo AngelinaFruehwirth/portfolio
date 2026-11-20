@@ -28,7 +28,7 @@ function create_modules_field(bool $is_project = false) {
                     ->set_required(),
             ])
 
-            // hero_front
+            // -> hero_front
             ->add_fields('hero_front', 'Hero Startseite', [
                 Field::make('text', 'title', 'Titel')
                     ->set_required(),
@@ -40,7 +40,7 @@ function create_modules_field(bool $is_project = false) {
                     ->set_required(),
             ])
 
-            // → overview_projects
+            // -> overview_projects
             ->add_fields('overview_projects', 'Übersicht Projekte', [
                 Field::make('text', 'title', 'Titel')
                     ->set_required(),
@@ -51,14 +51,25 @@ function create_modules_field(bool $is_project = false) {
                             'type' => 'post',
                             'post_type' => 'project',
                         ]
-                    ]),
+                    ])
+                    ->set_max(3)
+                    ->set_help_text('Wähle maximal drei Projekte für die Startseite aus.'),
             ]);
+
     }
 
 
     // -> Universelle Module
 
     $modules
+
+        // -> quote_block
+        ->add_fields('quote_block', 'Zitat', [
+            Field::make('textarea', 'quote', 'Zitat')
+                ->set_required()
+                ->set_rows(4)
+                ->set_help_text('Zitat für den vinofarbenen Abschnitt.'),
+        ])
 
         // todo: add new modules here
 
